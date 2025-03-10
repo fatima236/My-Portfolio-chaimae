@@ -1,0 +1,140 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* Conteneur principal */
+.hero {
+    background: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    height: 100vh;
+}
+
+/* Section Texte */
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.hero-text h1 span {
+    color: #00A9D4;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    color: #00A9D4;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-weight: bold;
+    text-align: justify;
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Bouton Download CV */
+.btn {
+    margin-top: 18px;
+    
+    display: inline-flex;
+    align-items: center;
+    background-color: #00A9D4;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn:hover {
+    background-color: #008bb0;
+}
+
+/* Icônes sociales */
+/* Icônes sociales */
+.social-icons {
+    display: inline-flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block; /* Assure que chaque icône garde sa propre zone */
+}
+
+.social-icons a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Espace entre l'icône et la ligne */
+    width: 100%; /* Ajuste la largeur pour qu'elle corresponde à l'icône */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #00A9D4; /* Couleur de la ligne */
+    visibility: visible; /* Toujours visible */
+}
+
+
+
+
+/* Changement de couleur des icônes au survol */
+.social-icons a:hover {
+    color: #00A9D4;
+}
+
+/* Section Image */
+.hero-image img {
+    margin-top: 40px;
+    width: 329px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image img:hover {
+    box-shadow: 0px 0px 10px #28c1ea;
+}
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+}

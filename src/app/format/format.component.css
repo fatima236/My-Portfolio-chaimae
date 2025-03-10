@@ -1,0 +1,161 @@
+/* Style général */
+.timeline {
+    background: #222222;
+    color: #17a2b8;
+    padding: 60px 10%;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+.timeline-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+/* Élément de la timeline */
+.timeline-item {
+    width: 48%; /* Par défaut, chaque élément occupe 48% de l'espace disponible */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    min-height: 180px;
+    padding: 20px;
+    opacity: 1; /* Changer de 0 à 1 pour que les cartes soient visibles par défaut */
+    transform: translateY(0); /* Supprimer l'effet de transformation initial */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Décaler la 2ème carte vers le haut */
+.timeline-item:nth-child(2) {
+    position: relative;
+    top: -27px;
+}
+
+/* Alternance gauche/droite */
+.timeline-item:nth-child(odd) {
+    align-self: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+/* Points de connexion */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background: #17a2b8;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 3px solid white;
+    z-index: 10;
+}
+
+/* Contenu */
+.content {
+    background: #25282c;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 90%;
+    text-align: left;
+    color: #fff;
+    border-left: 4px solid #17a2b8;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Effet hover */
+.timeline-item:hover .content {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(23, 162, 184, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        margin-left: -14px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #17a2b8;
+        letter-spacing: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 1.2;
+        gap: 5px;
+    }
+
+    .timeline-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .timeline-item {
+        margin-left: -25px !important;
+        width: 400px !important;
+        order: initial !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Réorganiser les cartes */
+    .timeline-container > .timeline-item:nth-child(1),
+    .timeline-container > .timeline-item:nth-child(3),
+    .timeline-container > .timeline-item:nth-child(5) {
+        order: 1 !important;
+    }
+
+    .timeline-container > .timeline-item:nth-child(2),
+    .timeline-container > .timeline-item:nth-child(4) {
+        order: 2 !important;
+    }
+
+    /* Ajustements éventuels */
+    .timeline-item::before {
+        display: none !important;
+    }
+
+    .content {
+        text-align: center;
+        border-left: 4px solid #17a2b8;
+        border-top: none;
+    }
+}
+
+/* Styles supplémentaires pour organiser les cartes à gauche et à droite */
+@media (min-width: 769px) {
+    .timeline-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Regrouper les cartes Education à gauche */
+    .timeline-item:nth-child(1),
+    .timeline-item:nth-child(3),
+    .timeline-item:nth-child(5) {
+        width: 32%; /* Ajuster la largeur des cartes Education */
+        align-self: flex-start;
+    }
+
+    /* Regrouper les cartes Experience et Certification à droite */
+    .timeline-item:nth-child(2),
+    .timeline-item:nth-child(4) {
+        width: 32%; /* Ajuster la largeur des cartes Experience et Certification */
+        align-self: flex-end;
+    }
+}

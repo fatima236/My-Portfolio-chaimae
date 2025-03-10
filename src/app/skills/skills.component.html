@@ -1,0 +1,21 @@
+skills.component.html   <div class="skills-container" id="skills">
+    <div class="text-section">
+      <div class="about-me-container">
+        <h2>Technical Skills</h2>
+        <div class="underline">
+          <div class="line large"></div>
+          <div class="line small"></div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  
+    <div class="skills-grid">
+      <div *ngFor="let skill of skills" class="skill-card">
+        <img [src]="skill.icon" [alt]="skill.name">
+        
+      </div>
+    </div>
+  </div>

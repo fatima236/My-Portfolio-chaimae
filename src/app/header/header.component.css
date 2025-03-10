@@ -1,0 +1,172 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #222222;
+    padding: 15px 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00A9D4;
+    margin-left: -40px;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+nav {
+    margin-left: 340px !important;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-left: 40px !important;
+}
+
+nav ul li {
+    display: inline;
+    font-weight: bold;
+    position: relative; /* Pour positionner la ligne sous le lien */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative; /* Pour positionner la ligne sous le lien */
+}
+
+/* Petite ligne sous les liens de navigation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position de la ligne sous le lien */
+    width: 100%;
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #00A9D4; /* Couleur de la ligne */
+    transform: scaleX(0); /* La ligne est initialement invisible */
+    transition: transform 0.3s ease-in-out; /* Animation de la ligne */
+}
+
+/* Animation de la ligne au survol */
+nav ul li a:hover::after {
+    transform: scaleX(1); /* La ligne apparaît complètement */
+}
+
+/* Changement de couleur des liens au survol */
+nav ul li a:hover {
+    color: #00A9D4;
+}
+
+/* Contact */
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.contact .separator {
+    color: #777;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.contact i {
+    color: #00A9D4;
+    font-size: 17px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #00A9D4;
+    font-weight: bold !important;
+    font-size: 1rem;
+    margin-right: -60px;
+}
+.contact a:hover{
+    color: #FFFFFF
+}
+
+/* Icônes sociales */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block; /* Assure que chaque icône garde sa propre zone */
+}
+
+.social-icons a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Espace entre l'icône et la ligne */
+    width: 100%; /* Ajuste la largeur pour qu'elle corresponde à l'icône */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #00A9D4; /* Couleur de la ligne */
+    visibility: visible; /* Toujours visible */
+}
+
+
+
+
+/* Changement de couleur des icônes au survol */
+.social-icons a:hover {
+    color: #00A9D4;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
