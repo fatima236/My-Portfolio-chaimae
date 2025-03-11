@@ -1,0 +1,44 @@
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: transparent;
+    border: 2px solid #00A9D4;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .scroll-button .progress {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00A9D4;
+    transition: top 0.1s linear;
+  }
+  
+  .scroll-button i {
+    color: #FFFFFF;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .scroll-button:hover {
+    border-color: #00A9D4;
+  }
+  
+  .scroll-button:hover i {
+    color: #FFFFFF;
+  }
+  
+
+  
+  

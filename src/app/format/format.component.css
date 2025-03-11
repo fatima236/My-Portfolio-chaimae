@@ -1,11 +1,33 @@
 /* Style général */
 .timeline {
     background: #222222;
-    color: #17a2b8;
+    color: #00A9D4;
     padding: 60px 10%;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     position: relative;
+}
+.underline {
+    margin-top: -25px;
+    margin-left: 83px;
+}
+
+.line {
+    height: 4px;
+    background-color: #00A9D4;
+    margin-top: 5px;
+}
+
+.large {
+    width: 360px;
+}
+
+.small {
+    width: 330px;
+}
+.title{
+    font-size: 2.3rem;
+    margin-top: -25px;
 }
 
 .timeline-container {
@@ -15,11 +37,13 @@
     max-width: 1000px;
     margin: auto;
     position: relative;
+    
+    
 }
 
 /* Élément de la timeline */
 .timeline-item {
-    width: 40% !important; /* Par défaut, chaque élément occupe 48% de l'espace disponible */
+    width: 38% !important; /* Par défaut, chaque élément occupe 48% de l'espace disponible */
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
@@ -34,7 +58,24 @@
 /* Décaler la 2ème carte vers le haut */
 .timeline-item:nth-child(2) {
     position: relative;
-    top: -27px;
+    top: -4px;
+}
+.timeline-item:nth-child(2) .content ul li {
+    margin-left: -55px !important;
+}
+
+
+.timeline-item:nth-child(5) {
+    position: relative;
+    top: -54px;
+}
+.timeline-item:nth-child(3) {
+    position: relative;
+    top: -38px;
+}
+.timeline-item:nth-child(4) {
+    position: relative;
+    top: 2px !important;
 }
 
 /* Alternance gauche/droite */
@@ -58,7 +99,7 @@
     left: 50%;
     width: 12px;
     height: 12px;
-    background: #17a2b8;
+    background: #00A9D4;
     border-radius: 50%;
     transform: translateX(-50%);
     border: 3px solid white;
@@ -73,7 +114,7 @@
     max-width: 90%;
     text-align: left;
     color: #fff;
-    border-left: 6px solid #17a2b8;
+    border-left: 6px solid #00A9D4;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -86,9 +127,11 @@
 
 /* Modifier la couleur des titres h3 dans les cartes */
 .timeline-item .content h3 {
-    color: #17a2b8;
+    color: #00A9D4;
     font-weight: bold !important; /* Couleur bleue */
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    margin-top: -3px;
+    
 }
 
 /* Aligner le texte à gauche pour tout le contenu */
@@ -96,13 +139,24 @@
 .timeline-item .content h4,
 .timeline-item .content h6,
 .timeline-item .content span {
-    text-align: left; /* Aligner tous les éléments de contenu à gauche */
-    margin-left: 0; /* Assurez-vous que le texte commence au bord gauche */
+    text-align: left !important; /* Aligner tous les éléments de contenu à gauche */
+    margin-left: 0 !important; /* Assurez-vous que le texte commence au bord gauche */
 }
+/* Aligner le texte des paragraphes à gauche */
+.timeline-item .content ul li{
+    text-align: left !important;
+    margin-left: -15px !important;
+}
+.omrane{
+    text-align: left;
+    margin-left: -40px !important;
+}
+
 
 /* Placer le lien "View Certificate" à droite sans soulignement */
 .timeline-item .content a.text-gradient {
-    color: #17a2b8; /* Couleur bleue */
+    color: #00A9D4; /* Couleur bleue */
+    font-weight: bold;
     text-decoration: none; /* Supprimer le soulignement */
     display: block; /* Faire en sorte que le lien prenne toute la largeur disponible */
     text-align: right; /* Aligner à droite */
@@ -111,7 +165,13 @@
 
 /* Effet de survol du lien (si nécessaire) */
 .timeline-item .content a.text-gradient:hover {
-    color: #0056b3; /* Couleur bleue plus foncée au survol */
+    color: #00A9D4; /* Couleur bleue plus foncée au survol */
+}
+.date{
+    margin-top: -8px !important;
+    
+    color: #00A9D4;
+    font-weight: bold;
 }
 
 /* Responsive */
@@ -132,6 +192,7 @@
         flex-direction: column !important;
         align-items: center !important;
     }
+    
 
     .timeline-item {
         margin-left: -25px !important;
@@ -147,6 +208,7 @@
     .timeline-container > .timeline-item:nth-child(3),
     .timeline-container > .timeline-item:nth-child(5) {
         order: 1 !important;
+        
     }
 
     .timeline-container > .timeline-item:nth-child(2),

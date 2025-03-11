@@ -1,0 +1,28 @@
+<div class="about-me-container" id="projects">
+    <h2>My Projects</h2>
+    <div class="underline">
+      <div class="line large"></div>
+      <div class="line small"></div>
+    </div>
+    <p>
+      Dive into my latest achievements and explore the innovations they incorporate. Each project reflects a commitment to transforming ideas into concrete solutions, pushing boundaries to deliver real added value.
+    </p>
+  </div>
+  
+  <div class="projects-container">
+    <div *ngFor="let project of projects" class="card">
+        <img [src]="project.image" alt="{{ project.title }}" class="project-image">
+        <div class="card-content">
+            <h2 class="project-title">{{ project.title }}</h2>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="tags">
+                <span *ngFor="let tech of project.technologies" class="tag">{{ tech }}</span>
+            </div>
+            <!-- Bouton "Détail" -->
+            <button class="view-more-btn" (click)="viewDetails(project)">
+               Détail <span class="arrow">→</span>
+          </button>
+         
+        </div>
+    </div>
+  </div>
