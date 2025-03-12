@@ -1,7 +1,7 @@
 .scroll-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 8px;
+    right: 7px;
     z-index: 1000;
     background-color: transparent;
     border: 2px solid #00A9D4;
