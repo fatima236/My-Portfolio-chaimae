@@ -1,16 +1,21 @@
 import { Component , HostListener , OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  menuOpen = false; // Par défaut, le menu est fermé
+  isMenuOpen = false;
 
   toggleMenu() {
-    this.menuOpen = !this.menuOpen; // Inverser l'état du menu
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 
 }

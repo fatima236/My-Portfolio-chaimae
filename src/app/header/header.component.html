@@ -15,43 +15,35 @@
 <body>
     <header>
         <div class="container">
-            <!-- Logo -->
-            <div class="logo">
-                <i class="fa-brands fa-react"></i>
-
-
-
-
-                <span>Chaimae</span>
-            </div>
-            <button class="menu-toggle" (click)="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            
-            
-
-            <!-- Navigation -->
-            <nav [class.open]="menuOpen">
-                <ul>
-                    <li><a href="#about" class="nav-link active">ABOUT</a></li>
-                    <li><a href="#experiences" class="nav-link">EXPERIENCE</a></li>
-                    <li><a href="#skills" class="nav-link">SKILLS</a></li>
-                    <li><a href="#projects" class="nav-link">PROJECTS</a></li>
-                    <li><a href="#contact" class="nav-link">CONTACT</a></li>
-                </ul>
-            </nav>
-
-            <!-- Contact -->
-            <div class="contact">
-                <span class="separator">|</span>
-                <i class="bi bi-telephone"></i>
-
-                <a href="tel:+212628901443">+212 628901443</a>
-            </div>
+          <div class="logo">
+            <i class="fa-brands fa-react"></i>
+            <span>Chaimae</span>
+          </div>
+      
+          <!-- Bouton Menu -->
+          <button class="menu-toggle" (click)="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+      
+          <!-- Navigation -->
+          <nav [class.open]="isMenuOpen">
+            <ul>
+              <li><a href="#about" class="nav-link" (click)="closeMenu()">ABOUT</a></li>
+              <li><a href="#experiences" class="nav-link" (click)="closeMenu()">EXPERIENCE</a></li>
+              <li><a href="#skills" class="nav-link" (click)="closeMenu()">SKILLS</a></li>
+              <li><a href="#projects" class="nav-link" (click)="closeMenu()">PROJECTS</a></li>
+              <li><a href="#contact" class="nav-link" (click)="closeMenu()">CONTACT</a></li>
+            </ul>
+          </nav>
+      
+          <div class="contact">
+            <span class="separator">|</span>
+            <i class="bi bi-telephone"></i>
+            <a href="tel:+212628901443">+212 628901443</a>
+          </div>
         </div>
-        
-    </header>
-    
+      </header>
+      
 
 
     <script src="script.js"></script>
