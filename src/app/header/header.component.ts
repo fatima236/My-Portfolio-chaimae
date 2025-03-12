@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , HostListener , OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  menuOpen = false; // Par défaut, le menu est fermé
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen; // Inverser l'état du menu
+  }
 
 }

@@ -176,78 +176,108 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .title {
-        margin-left: -14px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #17a2b8;
-        letter-spacing: 2px;
-        display: flex;
-        flex-wrap: wrap;
-        line-height: 1.2;
-        gap: 5px;
-    }
+    /* Centrer la section avec un padding équilibré */
+    
 
-    .timeline-container {
+    /* Centrer le titre */
+    .title {
+        font-size: 1.2rem; /* Ajuste la taille du texte */
+        font-weight: bold;
+        color: #00A9D4; /* Assure-toi que la couleur correspond bien */
+        letter-spacing: 2px; /* Espacement des lettres */
+        text-align: center;
+        line-height: 1.3; /* Ajuste l'espacement vertical */
+        display: flex;
+        margin-left: 8px;
+        flex-direction: column;
+        
+    }
+    .timeline {
+        overflow-x: hidden; /* Empêcher le scroll horizontal */
+        margin: 0 auto; /* Centrer la section */
+        max-width: 100%;
+        padding: 50px 5%;
+        display: flex;
         flex-direction: column !important;
         align-items: center !important;
     }
-    
+    .underline{
+        display: none;
+    }
 
+    /* Centrer la timeline */
+    .timeline-container {
+        margin-left: -20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 5%;
+        gap: 20px; /* Ajoute un espacement uniforme entre les cartes */
+    }
+
+    /* Ajuster la largeur et espacement des cartes */
     .timeline-item {
-        margin-left: -25px !important;
-        width: 400px !important;
-        order: initial !important;
-        justify-content: center !important;
-        align-items: center !important;
+        width: 90% !important; /* Prend 90% de l'écran pour garder un espace équilibré */
+        max-width: 350px !important; /* Empêche que les cartes soient trop larges */
+        display: flex;
+        justify-content: center;
+        margin-right: 10px !important;
+        align-items: center;
         text-align: center !important;
     }
 
-    /* Réorganiser les cartes */
-    .timeline-container > .timeline-item:nth-child(1),
-    .timeline-container > .timeline-item:nth-child(3),
-    .timeline-container > .timeline-item:nth-child(5) {
-        order: 1 !important;
-        
-    }
-
-    .timeline-container > .timeline-item:nth-child(2),
-    .timeline-container > .timeline-item:nth-child(4) {
-        order: 2 !important;
-    }
-
-    /* Ajustements éventuels */
+    /* Supprimer les points de connexion */
     .timeline-item::before {
         display: none !important;
     }
 
+    /* Centrer le contenu des cartes */
     .content {
         text-align: center;
-        border-left: 4px solid #17a2b8;
-        border-top: none;
+        border-left: 4px solid #00A9D4;
+        padding: 15px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* Centrer la timeline */
+    
+
+    /* Centrer et limiter la largeur des cartes */
+    
+
+    /* Centrer le contenu des cartes */
+    
+
+    /* Réorganiser les cartes pour un affichage fluide */
+    .timeline-container > .timeline-item:nth-child(1){
+        order: 1 !important;
+    }
+    .timeline-container > .timeline-item:nth-child(3){
+        order: 2 !important;
+    }
+    .timeline-container > .timeline-item:nth-child(5){
+        order: 3 !important;
+    }
+
+    .timeline-container > .timeline-item:nth-child(2){
+        order: 4 !important;
+        margin-top: -55px !important;
+    }
+    .timeline-container > .timeline-item:nth-child(4){
+        order: 5;
+        margin-top: -18px;
+    }
+    .timeline-item .content h5{
+        text-align: left !important; /* Aligner tous les éléments de contenu à gauche */
+    margin-left: -3px !important; /* Assurez-vous que le texte commence au bord gauche */
+    }
+    .timeline-item .content ul li{
+        font-size: 13.9px;
     }
 }
+
 
 /* Styles supplémentaires pour organiser les cartes à gauche et à droite */
-@media (min-width: 769px) {
-    .timeline-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    /* Regrouper les cartes Education à gauche */
-    .timeline-item:nth-child(1),
-    .timeline-item:nth-child(3),
-    .timeline-item:nth-child(5) {
-        width: 32%; /* Ajuster la largeur des cartes Education */
-        align-self: flex-start;
-    }
-
-    /* Regrouper les cartes Experience et Certification à droite */
-    .timeline-item:nth-child(2),
-    .timeline-item:nth-child(4) {
-        width: 32%; /* Ajuster la largeur des cartes Experience et Certification */
-        align-self: flex-end;
-    }
-}

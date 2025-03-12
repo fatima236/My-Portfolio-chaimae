@@ -123,6 +123,52 @@
 
 @media (max-width: 768px) {
     .skills-grid {
+        margin-top: 45px !important;
         grid-template-columns: repeat(2, 1fr);
     }
+    .text-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrer le contenu */
+        text-align: center;
+        position: relative;
+        margin-top: -55px !important; /* ✅ Supprime l'espace au-dessus */
+    }
+
+    .text-section h2 {
+        font-size: 1.8rem !important;
+        font-weight: bold;
+        color: #00A9D4;
+        margin-top: 0 !important; /* ✅ Supprime l'espace au-dessus du titre */
+        text-align: center !important;
+        position: relative;
+        display: inline-block;
+    }
+
+    .underline {
+        width: 80px;
+        height: 4px;
+        background-color: #00A9D4;
+        border-radius: 2px;
+        margin-top: -28px;
+        position: relative;
+        margin-left: 45px;
+        transform: translateX(-50%);
+        display: block;
+    }
+    .line {
+        height: 4px;
+        background-color: #00A9D4;
+        margin-top: 5px;
+    }
+    
+    .large {
+        width: 180px;
+    }
+    
+    .small {
+        width: 140px;
+    }
+    
 }

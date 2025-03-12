@@ -167,47 +167,51 @@ p {
 
 /* For Mobile */
 @media (max-width: 768px) {
+    /* About Me Section */
     .about-me {
-        padding: 40px 5%;
+       margin-top: -33px;
     }
 
     .about-me h2 {
-        font-size: 2rem;
+        
+        font-size: 1.7rem;
         letter-spacing: 1px;
     }
 
     .about-me p {
-        font-size: 1rem !important;
+        font-size: 0.75rem;
         text-align: center !important;
-        line-height: 1.5 !important;
-        margin: 15px auto !important;
-        max-width: 800px !important;
+        text-align: justify;
+        line-height: 1.5;
+        margin: 15px auto;
+        max-width: 90%;
+        font-weight: 400;
     }
 
-    /* Vertical Divider Adjustment */
+    /* Divider centré */
     .underline {
-        margin-left: 99px;
+        margin-top: -24px !important;
+        margin-left: -40px;
+        margin-right: auto;
         display: flex;
-        margin-top: -8px;
         flex-direction: column;
         align-items: center;
     }
-
     .line {
         height: 3.8px;
-        margin-bottom: 3px;
+        background-color: #00A9D4;
+        margin-top: 5px;
     }
-
+    
     .large {
-        width: 130px;
+        width: 110px;
     }
-
+    
     .small {
-        margin-left: -2px;
-        width: 120px !important;
+        width: 100px;
     }
 
-    /* Adjust Skills Section */
+    /* Skills Section */
     .skills {
         flex-direction: column;
         align-items: center;
@@ -215,9 +219,9 @@ p {
     }
 
     .skill-card {
-        width: 100%;
-        max-width: 300px;
-        padding: 20px;
+        width: 75% !important;
+        max-width: 260px !important;
+        padding: 20px !important;
     }
 
     .icon {
@@ -227,12 +231,48 @@ p {
     }
 
     h3 {
-        font-size: 1rem;
-        text-align: center;
+        font-size: 1.2rem;
     }
 
     p {
         font-size: 0.95rem;
-        text-align: center !important;
+        text-align: center;
     }
 }
+
+/* Pour les écrans plus petits (max-width: 480px) */
+@media (max-width: 480px) {
+    .about-me {
+        padding: 30px 5%;
+    }
+
+    .about-me h2 {
+        
+        font-size: 1.8rem;
+    }
+
+    .about-me p {
+        font-size: 0.79rem;
+    }
+
+    .skill-card {
+        width: 100%;
+        max-width: 280px;
+        padding: 18px;
+    }
+
+    .icon {
+        font-size: 1.6rem;
+        width: 45px;
+        height: 45px;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+

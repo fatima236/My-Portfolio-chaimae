@@ -52,8 +52,15 @@
 }
 
 /* Bouton Download CV */
+.hero-actions {
+    display: flex;
+    align-items: center; /* Alignement vertical */
+    gap: 7px; /* Espacement entre le bouton et les icônes */
+    margin-top: 16px;
+}
+
 .btn {
-    margin-top: 18px;
+    margin-top: 12px !important;
     
     display: inline-flex;
     align-items: center;
@@ -138,3 +145,127 @@
         margin-top: 20px;
     }
 }
+/* Responsive pour les tablettes et mobiles */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+        height: auto;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    hero-image {
+        display: none; /* Cache l'image sur mobile */
+    }
+
+    .hero-text h1 {
+        margin-top: 36px;
+        font-size: 2rem; /* Ajuste la taille du texte */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Style pour "Hi, I'm" */
+    .hero-text h1 span:first-child {
+        display: block; /* Met "Hi, I'm" sur une seule ligne */
+    }
+
+    /* Style pour "Chaimae Benali" */
+    .hero-text h1 span:last-child {
+        display: block; /* Place "Chaimae Benali" en dessous */
+        font-size: 1.8rem; /* Augmente la taille pour le prénom */
+        font-weight: bold;
+    }
+
+    .hero-text h2 {
+        font-size: 1.3rem; /* Ajustement du sous-titre */
+    }
+
+    .hero-text p {
+        text-align: center !important;
+        margin: auto;
+        font-size: 0.9rem; /* Réduction du texte */
+        text-align: center;
+        font-weight: 500;
+        
+    }
+
+    /* Ajustement des boutons et icônes */
+    /* Ajustement des boutons et icônes */
+.hero-actions {
+    flex-direction: row; /* Met le bouton et les icônes sur la même ligne */
+    align-items: center;
+    justify-content: center; /* Centre le tout */
+    gap: 15px; /* Espace entre les éléments */
+}
+
+.btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+}
+
+/* Ajustement des icônes sociales */
+.social-icons {
+    display: flex; /* Assure l'affichage en ligne */
+    align-items: center;
+    gap: 10px;
+    margin-left: 0; /* Supprime l'espace inutile */
+    font-size: 12px !important;
+}
+
+
+    /* Ajustement de l'image */
+    .hero-image img {
+        width: 80%; /* Image plus petite */
+        max-width: 250px; /* Taille max pour éviter les débordements */
+        margin-top: 20px;
+    }
+    .social-icons a {
+        font-size: 1.37rem; /* Réduction de la taille des icônes */
+    }
+}
+
+/* Responsive pour les petits téléphones */
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero-text p {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+    }
+
+    .hero-image img {
+        display: none;
+        width: 90%;
+        max-width: 220px;
+    }
+    .social-icons {
+        display: flex; /* Assure l'affichage en ligne */
+        align-items: center;
+        gap: 10px;
+        margin-left: 0; /* Supprime l'espace inutile */
+        
+    }
+}
+

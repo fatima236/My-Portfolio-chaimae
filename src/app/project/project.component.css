@@ -154,12 +154,14 @@ p{
   }
   
   /* Bouton "Voir Plus" */
-  .view-more-btn {
+  .view-more-link {
     background: linear-gradient(to right, #5fd2ff, #7adfff);
     border: none;
     border-radius: 20px;
-    padding: 10px 22px;
+    padding: 8px 15px;
+    width: 70px;
     font-size: 16px;
+    text-decoration: none;
     font-weight: bold;
     color: black;
     cursor: pointer;
@@ -171,17 +173,17 @@ p{
     margin-top: 15px;
   }
   
-  .view-more-btn:hover {
+  .view-more-link:hover {
     background: linear-gradient(to right, #4ec3f7, #68d8ff);
     transform: scale(1.05);
   }
   
-  .view-more-btn .arrow {
+  .view-more-link .arrow {
     font-size: 18px;
     transition: transform 0.3s ease;
   }
   
-  .view-more-btn:hover .arrow {
+  .view-more-link:hover .arrow {
     transform: translateX(5px);
   }
   
@@ -190,13 +192,23 @@ p{
     .projects-container {
       flex-direction: column;
       align-items: center;
-      gap: 15px;
+      gap: 45px;
       padding: 15px;
+    }
+    .about-me-container h2{
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .about-me-container p{
+        margin-top: 20px !important;
+        font-size: 13.7px !important;
+        text-align: center;
     }
   
     .card {
-      width: 100%;
-      max-width: 380px;
+     margin-top: -19px;
+      width: 85%;
+      max-width: 360px !important;
       height: auto;
     }
   
@@ -205,7 +217,7 @@ p{
     }
   
     .project-title {
-      font-size: 20px;
+      font-size: 20px !important;
     }
   
     .project-description {
@@ -222,5 +234,26 @@ p{
       display: block;
       margin: 10px auto;
     }
+    .underline {
+        text-align: center;
+        margin-top: -30px;
+      }
+      
+      .line {
+        height: 3.7px;
+        background-color: #00A9D4;
+        margin-top: 7px;
+        margin-left: -50px;
+        margin-top: 5px;
+        
+      }
+      
+      .large {
+        width: 120px;
+      }
+      
+      .small {
+        width: 100px;
+      }
   }
   

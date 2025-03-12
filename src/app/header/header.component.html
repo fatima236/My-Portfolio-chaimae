@@ -24,15 +24,20 @@
 
                 <span>Chaimae</span>
             </div>
+            <button class="menu-toggle" (click)="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            
 
             <!-- Navigation -->
-            <nav>
+            <nav [class.open]="menuOpen">
                 <ul>
-                    <li><a href="#" class="nav-link active">ABOUT</a></li>
-                    <li><a href="#" class="nav-link">EXPERIENCE</a></li>
-                    <li><a href="#" class="nav-link">SKILLS</a></li>
-                    <li><a href="#" class="nav-link">PROJECTS</a></li>
-                    <li><a href="#" class="nav-link">CONTACT</a></li>
+                    <li><a href="#about" class="nav-link active">ABOUT</a></li>
+                    <li><a href="#experiences" class="nav-link">EXPERIENCE</a></li>
+                    <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                    <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                    <li><a href="#contact" class="nav-link">CONTACT</a></li>
                 </ul>
             </nav>
 
@@ -44,7 +49,10 @@
                 <a href="tel:+212628901443">+212 628901443</a>
             </div>
         </div>
+        
     </header>
+    
+
 
     <script src="script.js"></script>
 </body>
