@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "docs",
-            "index": "docs/index.html",
+            "index": "docs/404.html",
             "browser": "src/main.ts",
             "baseHref": "/My-Portfolio/",
             "polyfills": [
