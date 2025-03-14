@@ -3,7 +3,7 @@ export default `<!doctype html>
 <head>
   <meta charset="utf-8">
   <title>Projetportfolio</title>
-  <base href="/My-Portfolio">
+  <base href="/My-Portfolio/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="styles.css">
