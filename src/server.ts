@@ -1,66 +1,28 @@
-import {
-  AngularNodeAppEngine,
-  createNodeRequestHandler,
-  isMainModule,
-  writeResponseToNodeResponse,
-} from '@angular/ssr/node';
-import express from 'express';
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { AngularNodeAppEngine } from '@angular/ssr/node'; 
+import { IncomingMessage, RequestListener } from 'http';  // Importer IncomingMessage
+import { getContext } from '@netlify/angular-runtime/context';
 
-const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-const browserDistFolder = resolve(serverDistFolder, '../browser');
-
-const app = express();
-const angularApp = new AngularNodeAppEngine();
+const angularAppEngine = new AngularNodeAppEngine();
 
 /**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/**', (req, res) => {
- *   // Handle API request
- * });
- * ```
+ * Fonction de gestion des requêtes Netlify
  */
+export async function netlifyAppEngineHandler(request: IncomingMessage): Promise<Response> {  // Utiliser IncomingMessage comme type de requête
+  const context = getContext();
 
-/**
- * Serve static files from /browser
- */
-app.use(
-  express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: false,
-    redirect: false,
-  }),
-);
+  try {
+    // Adapter la requête si nécessaire et appeler handle() avec un seul argument
+    const result = await angularAppEngine.handle(request);
 
-/**
- * Handle all other requests by rendering the Angular application.
- */
-app.use('/**', (req, res, next) => {
-  angularApp
-    .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
-    .catch(next);
-});
-
-/**
- * Start the server if this module is the main entry point.
- * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
- */
-if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] || 4000;
-  app.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
-  });
+    // Retourner le résultat sous forme de Response
+    return result instanceof Response ? result : new Response(result || 'Not found', { status: 404 });
+  } catch (error) {
+    // En cas d'erreur, retourner une réponse avec un statut 500
+    return new Response('Error processing request', { status: 500 });
+  }
 }
 
 /**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
+ * Le gestionnaire de requêtes utilisé par le CLI Angular (dev-server et pendant la build).
  */
-export const reqHandler = createNodeRequestHandler(app);
+export const reqHandler = netlifyAppEngineHandler;
