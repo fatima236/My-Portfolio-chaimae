@@ -212,7 +212,7 @@ body{
 
     .contact-item a {
         margin-top: 5px;
-        font-size: 15px;
+        font-size: 15px !important;
     }
 
     .whatsapp-float {
