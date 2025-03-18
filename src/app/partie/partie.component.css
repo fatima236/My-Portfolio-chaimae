@@ -179,13 +179,14 @@ p {
     }
 
     .about-me p {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         text-align: center !important;
         text-align: justify;
         line-height: 1.5;
         margin: 15px auto;
         max-width: 90%;
         font-weight: 400;
+        color: #FFFFFF;
     }
 
     /* Divider centré */
